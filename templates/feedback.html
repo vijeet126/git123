@@ -1,0 +1,54 @@
+{% extends 'base2.html' %}
+{% block title %}
+➕ Internships
+{% endblock title %}
+
+
+
+{% block body %}
+<h1 style="margin-top: 8%;"></h1>
+ <h3 class="text-center bg-danger text-white"><span><br>➕ Internships<br><br></span> </h3>
+  
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+
+</div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+<br>
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4"></div>
+<div class="col-md-4">
+
+<form action="/department" method="post">
+
+
+<div class="form-group">
+<label for="dept">Enter the Internships Oppurtunity <br><br></label>
+<input type="text" class="form-control" name="dept" id="dept">
+</div>
+<br>
+
+  <button type="submit" class="btn btn-danger btn-sm btn-block">Update</button>
+</form>
+<br>
+<br>
+
+</div>
+
+<div class="col-md-4"></div>
+
+</div></div>
+
+
+
+{% endblock body %}

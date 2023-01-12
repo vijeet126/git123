@@ -1,0 +1,165 @@
+{% extends 'base2.html' %}
+{% block title %}
+Search
+{% endblock title %}
+
+
+
+{% block body %}
+<h1 style="margin-top: 8%;"></h1>
+ <h1 class="text-center bg-danger text-white"><span><br><b style="color: black;">C🌏NNƎCT -</b><b>-</b>  📜 Resume <br><br></span> </h1>
+ <!-- <h3 class="text-center"><span>Search Your Details</span> </h3> -->
+  
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+
+</div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+<br>
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<form action="/search" method="post">
+
+
+<div class="form-group">
+<!-- <label for="attendance">Enter Your Roll Number</label> -->
+<input type="text" class="form-control" name="roll" id="roll" placeholder="Search Connect">
+</div>
+<br>
+
+  <!-- <button type="submit" class="btn btn-danger btn-sm btn-block">Search</button> -->
+</form>
+<br>
+<br>
+
+</div>
+
+
+<div class="col-md-8">
+  
+{% if bio %}
+<input type="button" onclick="printDiv('vnn')" value="📥 Download Resume" class="hide" style="padding: 8px; border-radius: 5px; border: 1px ;"/></p>
+<div id="vnn" 
+  style=" 
+        width: 100%px; 
+        padding: 20px; 
+        border: 1px solid black; 
+        margin: 0;">
+<br>
+<!-- <a href="/search4">asdf</a> -->
+<h2 style=" ">Manish Wahale
+  <!-- {{bio.sname}} -->
+</h2> <a href="https://www.linkedin.com/in/{{bio.name}}">LinkedIn</a> | <a href="https://github.com/{{bio.sname}}">GitHub</a> | +91 9665693920<BR><BR>
+<h4 style="border-bottom: 1px solid black; width: 100%;">EDUCATION</h4>
+
+<table style="width:100%; border:1px solid black; text-align: center;">
+  <tr>
+    <th style="border:1px solid black;">Program</th>
+    <th style="border:1px solid black;">Institution</th>
+    <th style="border:1px solid black;">Grade</th>
+    <th style="border:1px solid black;">Year</th>
+  </tr>
+  <tr>
+    <td style="border:1px solid black;">B. Tech, Computer Science Engineering</td>
+    <td style="border:1px solid black;">Rajiv Gandhi Institute of Petroleum Technology, Jais    </td>
+    <td style="border:1px solid black;">7.62</td>
+    <td style="border:1px solid black;">2020 - 2024</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid black;">Intermediate</td>
+    <td style="border:1px solid black;">Shri Shivaji Science College, Nagpur    </td>
+    <td style="border:1px solid black;">88.5%</td>
+    <td style="border:1px solid black;">2020</td>
+  </tr>
+  <!-- <tr>
+    <td style="border:1px solid black;">Matriculation</td>
+    <td style="border:1px solid black;">T.B.R.A.N’S Mundle English Medium School, Nagpur    </td>
+    <td style="border:1px solid black;">94</td>
+    <td style="border:1px solid black;">2018</td>
+  </tr> -->
+</table>
+<br>
+<h4 style="border-bottom: 1px solid black; width: 100%;">SKILLS</h4>
+Python, R, SQL, HTML, CSS, C/C++
+<br>
+<br>
+
+<h4 style="border-bottom: 1px solid black; width: 100%;">PROJECTS</h4>
+<b> Real Time Music Recommendation System</b> <br>
+ Building a content-based music recommendation system to recommend similar songs based on the liked songs.
+ Streamed the Spotify music data with more than 600k tracks using Kafka as a producer.
+ Retrieved the streaming data from the producer in PySpark for the consumers and built a recommendation model
+upon this real time data.
+ Creating a music player app and deploying the recommendation engine over it.
+
+<br>
+<br><b> Real Time Music Recommendation System</b> <br>
+ Building a content-based music recommendation system to recommend similar songs based on the liked songs.
+ Streamed the Spotify music data with more than 600k tracks using Kafka as a producer.
+ Retrieved the streaming data from the producer in PySpark for the consumers and built a recommendation model
+upon this real time data.
+ Creating a music player app and deploying the recommendation engine over it.
+
+<br>
+<br>
+
+<h4 style="border-bottom: 1px solid black; width: 100%;">ACHIEVEMENTS</h4>
+Cleared JEE Advanced
+<br>
+<br>
+<h4 style="border-bottom: 1px solid black; width: 100%;">POSITIONS OF RESPONSIBILITY</h4>
+Mentor, Data Science, WInspiration CodeChef RGIPT
+<br>
+<br>
+
+ <!-- Roll No : {{bio.rollno}}
+
+Name    : {{bio.sname}}
+Sem   : {{bio.sem}}
+Gender   : {{bio.gender}}
+Branch  : {{bio.branch}}
+Email  : {{bio.email}}
+Number  : {{bio.number}}
+Address  : {{bio.address}}
+  
+Attendance : {{attend.attendance}} -->
+
+<br><br> 
+  </div>
+<p align="left">
+  <br>
+{% else %}
+No such results
+{% endif %} 
+</div>
+</div>
+
+
+
+<script>
+function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>
+
+
+
+{% endblock body %}

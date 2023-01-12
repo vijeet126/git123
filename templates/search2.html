@@ -1,0 +1,90 @@
+<!-- {% extends 'base2.html' %}
+{% block title %}
+Search
+{% endblock title %}
+
+
+
+{% block body %}
+<h1 style="margin-top: 8%;"></h1>
+ <h1 class="text-center bg-danger text-white"><span><br><b style="color: black;">C🌏NNƎCT</b> <br><br></span> </h1>
+ <!-- <h3 class="text-center"><span>Search Your Details</span> </h3> -->
+  
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+
+</div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+<br>
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4">
+
+<form action="/search" method="post">
+
+
+<div class="form-group">
+<!-- <label for="attendance">Enter Your Roll Number</label> -->
+<input type="text" class="form-control" name="roll" id="roll" placeholder="Search Connect">
+</div>
+<br>
+
+  <!-- <button type="submit" class="btn btn-danger btn-sm btn-block">Search</button> -->
+</form>
+<br>
+<br>
+
+</div>
+
+
+<div class="col-md-8">
+{% if bio %}
+<br>
+<h3>Your Details</h3>
+ <hr>
+ <li>Roll No : {{bio.rollno}}</li>
+
+ <li>Name    : {{bio.sname}}</li>
+  <li>Sem   : {{bio.sem}}</li>
+  <li>Gender   : {{bio.gender}}</li>
+  <li>Branch  : {{bio.branch}}</li>
+  <li>Email  : {{bio.email}}</li>
+  <li>Number  : {{bio.number}}</li>
+  <li>Address  : {{bio.address}}</li>
+  <hr>
+  <h3>Attendance Status</h3>
+  <hr>
+  <li>Attendance : {{attend.attendance}}</li>
+<br><br>
+{% else %}
+No such results
+{% endif %}
+
+</div>
+</div>
+
+
+
+{% endblock body %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  Hello world
+</body>
+</html>
